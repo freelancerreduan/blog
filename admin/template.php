@@ -53,6 +53,9 @@
                             elseif($view=="blog_img_change"){
                                 include('view/blog_img_change_view.php');
                             }
+                            elseif($view=="post_edite"){
+                                include('view//post_edite_view.php');
+                            }
                         }
                         ?>
                     </div>

@@ -552,4 +552,3 @@
 </div>
 
 
-https://github.com/freelancerreduan/blog_project_new_fully_completed.git

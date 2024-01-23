@@ -1,31 +1,38 @@
 <?php
-    include_once('class/function.php');
-    $obj = new blog_project();
 
-    if(isset($_GET['status'])){
-        if($_GET['status']=='post_chang_img'){ 
-            $id = $_GET['id'];
-            $msg = $_GET['$id'];
-        }
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'post_chang_img') {
+        $id = $_GET['id'];
+        $img_display = $obj->edite_page_img_display($id);
     }
-    if(isset($_POST['chang_blog_img'])){
-        $msg = $obj-> chang_img($_POST);
-    }
+}
+
+// // this code for (post img updated) in database
+if (isset($_POST['chang_img'])) {
+    $msg = $obj->update_img($_POST);
+}
+
 
 ?>
+
+
+
 <div class="cotainer">
     <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <?php if(isset($msg)){ echo "$msg"; } ?>
-        <form action="" method="post" enctype="multipart/form-data"class="form" >
+        <?php if (isset($msg)) {
+            echo "$msg";
+        } ?>
 
+        <form action="" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
-                <input type="text" value="<?php echo $id; ?>">
                 <label for="text">Category Type</label>
-                <input type="file" class="form-control" name="cat_des">
+                <input type="file" class="form-control" name="chang_post_img" required>
+                <br>
+                <img src="../upload/<?php echo $img_display['post_img']; ?>" alt="edite img" class="w-100 img-fluid my-3" style="width: 100%; height: 200px;">
+
+                <input type="hidden" value="<?php echo $img_display['id']; ?>" name="post_id">
+                <button type="submit" class="btn btn-primary btn-block" name="chang_img">Change Img</button>
             </div>
-
-            <button type="submit" class="btn btn-primary btn-block" name="chang_blog_img">Change Img</button>
-
         </form>
     </div>
 </div>

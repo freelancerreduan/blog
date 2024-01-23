@@ -16,7 +16,7 @@
           </div>
           <div class="down-content">
             <span><?php echo $post_display['post_tag']; ?></span>
-            <a href="post-details.html">
+            <a href="single_post.php?view=singlePostview&&id=<?php echo $post_display['id']; ?>">
               <h4><?php echo $post_display['post_title']; ?></h4>
             </a>
             <ul class="post-info">

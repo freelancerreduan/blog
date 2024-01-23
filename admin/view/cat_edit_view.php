@@ -10,6 +10,7 @@
         }
     }
 
+    // this code for (Category updated) in database
     if(isset($_POST['cat_update'])){
         $msg = $obj-> cat_updated($_POST);
     }
